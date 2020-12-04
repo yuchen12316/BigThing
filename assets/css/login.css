@@ -19,7 +19,24 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.title-log {
+.title-box {
     height: 60px;
     background: url('/assets/images/login_title.png') no-repeat center;
 }
+
+.reg-box {
+    display: none;
+  }
+
+  .layui-form {
+    padding: 0 30px;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .links a {
+    font-size: 12px;
+  }
