@@ -3,7 +3,8 @@ $(function () {
   var form = layui.form
 
   initCate()
-
+  // 初始化富文本编辑器
+  initEditor()
 
 
   // 定义加载文章分类的方法
@@ -91,6 +92,25 @@ $(function () {
 
   })
 
+  function publishArticle(fd) {
+    $.ajax({
+      method: 'POST',
+      url: '/my/article/add',
+      data: fd,
+      // 注意：如果向服务器提交的是 FormData 格式的数据，
+      // 必须添加以下两个配置项
+      contentType: false,
+      processData: false,
+      success: function(res) {
+        if (res.status !== 0) {
+          return layer.msg('发布文章失败！')
+        }
+        layer.msg('发布文章成功！')
+        // 发布文章成功后，跳转到文章列表页面
+        location.href = '/article/art_list.html'
+      }
+    })
+  }
 
-
+  
 })
