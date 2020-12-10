@@ -11,7 +11,7 @@ $(function () {
   function initCate() {
     $.ajax({
       method: 'GET',
-      url: '/my/article/cates',
+      url: ' /my/article/addcates',
       success: function (res) {
         if (res.status !== 0) {
           return layer.msg('初始化文章分类失败！')
@@ -101,7 +101,7 @@ $(function () {
       // 必须添加以下两个配置项
       contentType: false,
       processData: false,
-      success: function(res) {
+      success: function (res) {
         if (res.status !== 0) {
           return layer.msg('发布文章失败！')
         }
@@ -112,5 +112,5 @@ $(function () {
     })
   }
 
-  
+
 })
